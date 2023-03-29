@@ -4,7 +4,7 @@ import cartIcon from '../../assets/cart-icon.svg';
 
 import styles from './styles.module.scss';
 
-export const Home = () => {
+export const Header = () => {
   return (
     <div className={styles.headerContainer}>
       <div>

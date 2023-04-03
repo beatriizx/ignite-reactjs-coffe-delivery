@@ -10,7 +10,12 @@
     #f5eedc,
     #f0e7eb,
     #f4f1fb,
-    #fafafa
+    #fafafa 50%
   );
 
+  .homeContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
 }

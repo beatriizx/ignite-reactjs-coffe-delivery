@@ -1,0 +1,44 @@
+.homeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  margin-top: 2rem;
+
+  background: linear-gradient(
+    to bottom,
+    #fafafa,
+    #f4f1fb,
+    #f6f0e8,
+    #f5eedc,
+    #f0e7eb,
+    #f4f1fb,
+    #fafafa
+  );
+
+  .homeContent {
+    display: flex;
+    max-width: 1200px;
+    padding: 5rem;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 3.875rem;
+      margin-bottom: 8.375rem;
+    }
+  }
+
+  .benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 560px;
+    color: var(--base-gray-700);
+    div {
+      display: flex;
+      gap: 0.75rem;
+    }
+  }
+}

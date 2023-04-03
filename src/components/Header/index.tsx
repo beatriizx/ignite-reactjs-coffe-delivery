@@ -1,7 +1,6 @@
 import logo from '../../assets/logo.svg';
 import locationIcon from '../../assets/location-icon.svg';
 import cartIcon from '../../assets/cart-icon.svg';
-
 import styles from './styles.module.scss';
 
 export const Header = () => {

@@ -16,5 +16,22 @@ ul {
 
 body {
   height: 100vh;
+  background-color: #fafafa;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+}
+
+p,
+span,
+button,
+input,
+label {
+  font-family: 'Roboto', sans-serif;
+}

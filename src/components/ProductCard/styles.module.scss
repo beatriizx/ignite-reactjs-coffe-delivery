@@ -15,12 +15,16 @@
     padding-bottom: 1.25rem;
 
     .productTag {
-      background-color: var(--brand-yellow-100);
-      color: var(--brand-yellow-500);
-      font-weight: 700;
-      font-size: 0.625rem;
-      padding: 0.5rem;
-      border-radius: 100px;
+      display: flex;
+      gap: 0.25rem;
+      span {
+        background-color: var(--brand-yellow-100);
+        color: var(--brand-yellow-500);
+        font-weight: 700;
+        font-size: 0.625rem;
+        padding: 0.5rem;
+        border-radius: 100px;
+      }
     }
 
     .productImage {

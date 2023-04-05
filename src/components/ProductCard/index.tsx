@@ -7,7 +7,7 @@ interface ProductCardProps {
     description: string;
     price: number;
     tags: string[];
-    image: string;
+    imageSrc: string;
   };
 }
 export const ProductCard = ({ product }: ProductCardProps) => {
@@ -16,7 +16,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardContent}>
-        <img src={product.image} alt="" className={styles.productImage} />
+        <img src={product.imageSrc} alt="" className={styles.productImage} />
 
         <div className={styles.productInfo}>
           <div className={styles.productTag}>{tags.map((tag) => productTag(tag))}</div>

@@ -2,8 +2,12 @@ import logo from '../../assets/logo.svg';
 import locationIcon from '../../assets/location-icon.svg';
 import cartIcon from '../../assets/cart-icon.svg';
 import styles from './styles.module.scss';
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
 export const Header = () => {
+  const { totalProductsInCart } = useContext(CartContext);
+
   return (
     <div className={styles.headerContainer}>
       <div>
@@ -16,6 +20,7 @@ export const Header = () => {
         </div>
         <button>
           <img src={cartIcon} alt="" />
+          {totalProductsInCart > 0 && <span>{totalProductsInCart}</span>}
         </button>
       </div>
     </div>

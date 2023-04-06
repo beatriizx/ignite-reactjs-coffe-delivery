@@ -90,6 +90,11 @@
           background-color: transparent;
           width: 30px;
           color: var(--brand-purple-300);
+
+          &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+          }
         }
       }
     }

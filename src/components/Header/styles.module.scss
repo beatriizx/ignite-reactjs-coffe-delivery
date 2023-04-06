@@ -29,6 +29,25 @@
       border-radius: 6px;
       display: flex;
       align-items: center;
+      position: relative;
+
+      span {
+        position: absolute;
+        background-color: var(--brand-yellow-500);
+        color: white;
+        border-radius: 1000px;
+        text-align: center;
+        width: 23px;
+        height: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+        top: -13px;
+        right: -8px;
+        font-weight: bold;
+      }
     }
   }
 }

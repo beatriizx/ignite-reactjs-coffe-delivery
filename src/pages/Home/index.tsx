@@ -24,7 +24,7 @@ export const Home = () => {
         <h2>Nossos cafés</h2>
         <ul className={styles.productList}>
           {products.map((product) => (
-            <li>
+            <li key={product.id}>
               <ProductCard product={product} />
             </li>
           ))}

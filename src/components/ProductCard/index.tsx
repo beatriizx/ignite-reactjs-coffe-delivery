@@ -1,8 +1,11 @@
 import styles from './styles.module.scss';
 import cartIcon from '../../assets/cart-icon-3.svg';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
 interface ProductCardProps {
   product: {
+    id: number;
     name: string;
     description: string;
     price: number;
@@ -11,8 +14,32 @@ interface ProductCardProps {
   };
 }
 export const ProductCard = ({ product }: ProductCardProps) => {
-  const productTag = (text: string) => <span>{text}</span>;
+  const { addNewProductToCart } = useContext(CartContext);
+  const [productAmount, setProductAmount] = useState(1);
+
+  const addProductToCart = () => {
+    const productProps = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      imageSrc: product.imageSrc,
+      amount: productAmount,
+    };
+
+    addNewProductToCart(productProps);
+  };
+
+  const increaseProductAmount = () => {
+    setProductAmount((amount) => amount + 1);
+  };
+
+  const decreaseProductAmount = () => {
+    setProductAmount((amount) => amount - 1);
+  };
+
+  const productTag = (text: string) => <span key={text}>{text}</span>;
   const { name, description, price, tags } = product;
+
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardContent}>
@@ -29,11 +56,17 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             R$ <b>{price}</b>
           </span>
           <div className={styles.productControllers}>
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button onClick={() => decreaseProductAmount()} disabled={productAmount === 1}>
+              -
+            </button>
+            <span>{productAmount}</span>
+            <button onClick={() => increaseProductAmount()}>+</button>
           </div>
-          <button>
+          <button
+            onClick={() => {
+              addProductToCart();
+            }}
+          >
             <img src={cartIcon} alt="" />
           </button>
         </div>

@@ -1,9 +1,9 @@
 import styles from './styles.module.scss';
-import coffeIcon from '../../../assets/coffe-icon.svg';
-import packageIcon from '../../../assets/package-icon.svg';
-import timerIcon from '../../../assets/timer-icon.svg';
-import cartIcon from '../../../assets/cart-icon-2.svg';
-import coffe from '../../../assets/coffe.png';
+import coffeIcon from '../../assets/coffe-icon.svg';
+import packageIcon from '../../assets/package-icon.svg';
+import timerIcon from '../../assets/timer-icon.svg';
+import cartIcon from '../../assets/cart-icon-2.svg';
+import coffe from '../../assets/coffe.png';
 
 export const IntroSection = () => {
   return (

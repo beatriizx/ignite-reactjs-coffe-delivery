@@ -1,3 +1,9 @@
+import { OrderResume } from '../../components/OrderResume';
+
 export const Cart = () => {
-  return <div>Cart</div>;
+  return (
+    <div>
+      <OrderResume />
+    </div>
+  );
 };

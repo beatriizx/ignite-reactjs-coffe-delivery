@@ -4,6 +4,7 @@ import cartIcon from '../../assets/cart-icon.svg';
 import styles from './styles.module.scss';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const { totalProductsInCart } = useContext(CartContext);
@@ -18,10 +19,12 @@ export const Header = () => {
           <img src={locationIcon} alt="" />
           <span>São Paulo, SP</span>
         </div>
-        <button>
-          <img src={cartIcon} alt="" />
-          {totalProductsInCart > 0 && <span>{totalProductsInCart}</span>}
-        </button>
+        <Link to="/cart">
+          <button>
+            <img src={cartIcon} alt="" />
+            {totalProductsInCart > 0 && <span>{totalProductsInCart}</span>}
+          </button>
+        </Link>
       </div>
     </div>
   );

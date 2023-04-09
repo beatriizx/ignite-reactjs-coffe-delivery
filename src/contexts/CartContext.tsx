@@ -1,13 +1,13 @@
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
 interface CartContextProviderProps {
   children: ReactNode;
 }
-type Product = {
+export type Product = {
   id: number;
   name: string;
   price: number;
-  imageSrc: number;
+  imageSrc: string;
   amount: number;
 };
 
@@ -29,13 +29,45 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     setProducts((oldProduct) => [...oldProduct, currentProduct]);
   };
 
+  const removeProductToCart = (currentProduct: Product) => {
+    const newArr = products.filter((product) => currentProduct.id !== product.id);
+    setProducts(newArr);
+  };
+
+  const updateLocalStorage = () => {
+    const value = JSON.stringify(products);
+    localStorage.setItem('coffe-delivery-cart', value);
+  };
+
   const totalProductsInCart = products.reduce((total, item) => (total += item.amount), 0);
+
   const totalPrice = products
     .reduce((total, item) => (total += item.price * item.amount), 0)
     .toFixed(2);
 
+  useEffect(() => {
+    const retrieveProducts = localStorage.getItem('coffe-delivery-cart');
+
+    if (retrieveProducts && JSON.parse(retrieveProducts).length > 0) {
+      setProducts(JSON.parse(retrieveProducts));
+      return;
+    }
+  }, []);
+
+  useEffect(() => {
+    updateLocalStorage();
+  }, [products]);
+
   return (
-    <CartContext.Provider value={{ totalProductsInCart, addNewProductToCart, totalPrice }}>
+    <CartContext.Provider
+      value={{
+        totalProductsInCart,
+        addNewProductToCart,
+        removeProductToCart,
+        totalPrice,
+        products,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

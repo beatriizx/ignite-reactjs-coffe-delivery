@@ -16,18 +16,18 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
   const [products, setProducts] = useState<Product[]>([]);
 
   const addNewProductToCart = (currentProduct: Product) => {
-    const productAlreadyAdded = products.findIndex((product) => currentProduct.id === product.id);
+    const index = products.findIndex((product) => currentProduct.id === product.id);
 
-    if (productAlreadyAdded !== -1) {
+    if (index !== -1) {
       let newProcutList = [...products];
-      const oldProductAmount = newProcutList[productAlreadyAdded].amount;
-      newProcutList[productAlreadyAdded].amount = currentProduct.amount + oldProductAmount;
+      const oldProductAmount = newProcutList[index].amount;
+      newProcutList[index].amount = currentProduct.amount + oldProductAmount;
       setProducts(newProcutList);
       return;
     }
 
     setProducts((oldProduct) => [...oldProduct, currentProduct]);
-  };
+  }
 
   const removeProductToCart = (currentProduct: Product) => {
     const newArr = products.filter((product) => currentProduct.id !== product.id);
@@ -38,6 +38,13 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     const value = JSON.stringify(products);
     localStorage.setItem('coffe-delivery-cart', value);
   };
+
+  const handleProductCartAmountChange = (currentProduct: Product, increase: boolean = true) => {
+    const product = products.findIndex((product) => currentProduct.id === product.id);
+    let newProcutList = [...products];
+    newProcutList[product].amount = increase ? currentProduct.amount + 1 : currentProduct.amount - 1;
+    setProducts(newProcutList);
+  }
 
   const totalProductsInCart = products.reduce((total, item) => (total += item.amount), 0);
 
@@ -63,6 +70,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
       value={{
         totalProductsInCart,
         addNewProductToCart,
+        handleProductCartAmountChange,
         removeProductToCart,
         totalPrice,
         products,

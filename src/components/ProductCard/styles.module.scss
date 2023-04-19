@@ -24,6 +24,7 @@
         font-size: 0.625rem;
         padding: 0.5rem;
         border-radius: 100px;
+
       }
     }
 
@@ -60,7 +61,7 @@
       justify-content: center;
       gap: 0.5rem;
 
-      span {
+      .price {
         font-size: 0.875rem;
         color: var(--base-gray-700);
         margin-right: 1rem;
@@ -69,32 +70,6 @@
           font-weight: 800;
           font-size: 1.5rem;
           font-family: 'Baloo 2', cursive;
-        }
-      }
-
-      .productControllers {
-        background-color: var(--base-gray-200);
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem;
-        border-radius: 6px;
-
-        span {
-          font-size: 1.5rem;
-          margin-right: unset;
-        }
-
-        button {
-          background-color: transparent;
-          width: 30px;
-          color: var(--brand-purple-300);
-
-          &:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-          }
         }
       }
     }

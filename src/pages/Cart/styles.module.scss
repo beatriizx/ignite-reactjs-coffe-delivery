@@ -1,0 +1,31 @@
+.productContainer {
+  display: flex;
+  align-items: center;
+  width: 360px;
+
+
+  .productImage {
+    width: 64px;
+    margin-right: 1.25rem;
+  }
+
+  button {
+    padding: 0.3rem;
+  }
+
+  .productContent {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  
+    .productInfo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

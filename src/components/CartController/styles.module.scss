@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  gap: 0.5rem;
+  width: inherit;
+  height: inherit;
+
+  .buttonAction {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--base-gray-200);
+      color: var(--base-gray-700);
+      border-radius: 6px; 
+      font-size: 0.75rem;
+    
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+    
+  }
+
+  .productControllers {
+    background-color: var(--base-gray-200);
+    width: 72px;
+    height: 38px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 6px;
+    box-sizing: border-box;
+
+    span {
+      margin-right: unset;
+      font-size: 1rem;
+
+    }
+
+    button {
+      background-color: transparent;     
+      color: var(--brand-purple-300);
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

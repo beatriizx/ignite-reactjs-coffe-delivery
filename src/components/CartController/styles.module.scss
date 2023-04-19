@@ -5,20 +5,20 @@
   height: inherit;
 
   .buttonAction {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: var(--base-gray-200);
-      color: var(--base-gray-700);
-      border-radius: 6px; 
-      font-size: 0.75rem;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--base-gray-200);
+    color: var(--base-gray-700);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    flex: 1;
 
-      &:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-      }
-    
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
   }
 
   .productControllers {
@@ -36,11 +36,10 @@
     span {
       margin-right: unset;
       font-size: 1rem;
-
     }
 
     button {
-      background-color: transparent;     
+      background-color: transparent;
       color: var(--brand-purple-300);
 
       &:disabled {

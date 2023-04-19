@@ -27,7 +27,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     }
 
     setProducts((oldProduct) => [...oldProduct, currentProduct]);
-  }
+  };
 
   const removeProductToCart = (currentProduct: Product) => {
     const newArr = products.filter((product) => currentProduct.id !== product.id);
@@ -42,15 +42,21 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
   const handleProductCartAmountChange = (currentProduct: Product, increase: boolean = true) => {
     const product = products.findIndex((product) => currentProduct.id === product.id);
     let newProcutList = [...products];
-    newProcutList[product].amount = increase ? currentProduct.amount + 1 : currentProduct.amount - 1;
+    newProcutList[product].amount = increase
+      ? currentProduct.amount + 1
+      : currentProduct.amount - 1;
     setProducts(newProcutList);
-  }
+  };
 
   const totalProductsInCart = products.reduce((total, item) => (total += item.amount), 0);
 
-  const totalPrice = products
+  const totalProductsPrice = products
     .reduce((total, item) => (total += item.price * item.amount), 0)
     .toFixed(2);
+
+  const shippingPrice = 3.5;
+
+  const totalPrice = (Number(totalProductsPrice) + shippingPrice).toFixed(2);
 
   useEffect(() => {
     const retrieveProducts = localStorage.getItem('coffe-delivery-cart');
@@ -72,7 +78,9 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
         addNewProductToCart,
         handleProductCartAmountChange,
         removeProductToCart,
+        totalProductsPrice,
         totalPrice,
+        shippingPrice,
         products,
       }}
     >

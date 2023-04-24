@@ -35,24 +35,24 @@ export const CartForm = () => {
         </div>
 
         <div className={styles.paymentOptions}>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-            }}
-          >
+          <label>
             <img src={creditCardIcon} alt="" />
-            <span>Cartão de crédito</span>
-          </button>
+            Cartão de crédito
+            <input type="radio" name="payment" id="payment1" />
+          </label>
 
-          <button>
+          <label>
             <img src={debitCardIcon} alt="" />
-            <span>Cartão de débito</span>
-          </button>
+            Cartão de débito
+            <input type="radio" name="payment" id="payment2" />
+          </label>
 
-          <button>
+          <label>
             <img src={cashIcon} alt="" />
-            <span> Débito</span>
-          </button>
+            Débito
+            <input type="radio" name="payment" id="payment3" />
+          </label>
+          
         </div>
       </div>
     </form>

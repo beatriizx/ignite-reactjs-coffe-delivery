@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styles from './styles.module.scss';
 import { CartContext, Product } from '../../contexts/CartContext';
-import { CartController } from '../CartController';
+import { CartController } from '../../components/CartController';
 
 export const CartDetails = () => {
   const { products, totalProductsPrice, totalPrice, shippingPrice } = useContext(CartContext);

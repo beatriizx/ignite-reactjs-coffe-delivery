@@ -1,9 +1,9 @@
 .container {
-  padding: 1.5rem 2.5rem;
-  width: 450px;
+  padding: 1.5rem 2.5rem 3rem 2.5rem;
+  width: 370px;
+  height: fit-content;
   background-color: var(--brand-gray-100);
   border-radius: 6px 36px 6px 36px;
-  margin-left: auto;
 
   .cartInfo {
     display: flex;

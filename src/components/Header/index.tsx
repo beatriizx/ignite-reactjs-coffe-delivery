@@ -2,6 +2,7 @@ import logo from '../../assets/logo.svg';
 import locationIcon from '../../assets/location-icon.svg';
 import cartIcon from '../../assets/cart-icon.svg';
 import styles from './styles.module.scss';
+
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
@@ -11,9 +12,11 @@ export const Header = () => {
 
   return (
     <div className={styles.headerContainer}>
-      <div>
-        <img src={logo} alt="Logo do Coffe Delivery" className={styles.headerLogo} />
-      </div>
+      <Link to="/">
+        <div>
+          <img src={logo} alt="Logo do Coffe Delivery" className={styles.headerLogo} />
+        </div>
+      </Link>
       <div className={styles.headerContent}>
         <div>
           <img src={locationIcon} alt="" />

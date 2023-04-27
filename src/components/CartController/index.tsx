@@ -12,7 +12,8 @@ interface CartControllerProps {
 
 export const CartController = ({ product, pageType }: CartControllerProps) => {
   const [productAmount, setProductAmount] = useState<number>(product.amount || 1);
-  const { addNewProductToCart, removeProductToCart, handleProductCartAmountChange} = useContext(CartContext);
+  const { addNewProductToCart, removeProductToCart, handleProductCartAmountChange } =
+    useContext(CartContext);
   const buttonIcon = pageType === 'cart' ? trashIcon : cartIcon;
 
   const productProps = {
@@ -23,26 +24,28 @@ export const CartController = ({ product, pageType }: CartControllerProps) => {
     amount: productAmount,
   };
 
-  const handleCartChange = pageType === "cart" ? removeProductToCart : addNewProductToCart;
+  const handleCartChange = pageType === 'cart' ? removeProductToCart : addNewProductToCart;
 
   return (
     <div className={styles.container}>
-      <div className={styles.productControllers} >
+      <div className={styles.productControllers}>
         <button
           onClick={() => {
-            setProductAmount(amount => amount - 1)
-            if(pageType === "cart") handleProductCartAmountChange(productProps, false);
+            setProductAmount((amount) => amount - 1);
+            if (pageType === 'cart') handleProductCartAmountChange(productProps, false);
           }}
           disabled={productAmount === 1}
+          type="button"
         >
           -
         </button>
         <span>{productAmount}</span>
         <button
           onClick={() => {
-            setProductAmount(amount => amount + 1)
-            if(pageType ==="cart") handleProductCartAmountChange(productProps);
+            setProductAmount((amount) => amount + 1);
+            if (pageType === 'cart') handleProductCartAmountChange(productProps);
           }}
+          type="button"
         >
           +
         </button>
@@ -52,6 +55,7 @@ export const CartController = ({ product, pageType }: CartControllerProps) => {
         onClick={() => {
           handleCartChange(productProps, true);
         }}
+        type="button"
       >
         <img src={buttonIcon} alt="" />
         {pageType === 'cart' && <span>REMOVER</span>}

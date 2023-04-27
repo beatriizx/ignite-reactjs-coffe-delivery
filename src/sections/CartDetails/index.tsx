@@ -40,7 +40,9 @@ export const CartDetails = () => {
         </div>
       </div>
 
-      <button className={styles.confirmOrder}>CONFIRMAR PEDIDO</button>
+      <button className={styles.confirmOrder} type="submit">
+        CONFIRMAR PEDIDO
+      </button>
     </div>
   );
 };

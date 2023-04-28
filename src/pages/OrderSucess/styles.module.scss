@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  box-sizing: border-box;
+
+  h1 {
+    font-size: 1.5rem;
+    color: var(--brand-yellow-500);
+  }
+
+  p {
+    font-size: 0.875rem;
+    margin-bottom: 3rem;
+  }
+
+  .motoboyImage {
+    order: 2;
+    margin-bottom: 2rem;
+    max-width: 300px;
+  }
+
+  .orderData {
+    order: 3;
+    border: #dbac2c 1px solid;
+    border-radius: 6px 36px;
+    padding: 2rem;
+
+    .info {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      span {
+        display: block;
+        font-size: 0.875rem;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .container {
+    height: 100%;
+    .title {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .orderData {
+      height: 280px;
+      margin-top: 2rem;
+      padding: 2.5rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+
+      .info {
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 6.25rem;
+    align-items: unset;
+
+    .orderData {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: end;
+      height: initial;
+      margin-top: 10rem;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .title {
+      grid-column: 1;
+      grid-row: 1;
+      font-size: 2rem;
+    }
+
+    .motoboyImage {
+      align-self: end;
+      margin-bottom: unset;
+      max-width: unset;
+    }
+  }
+}

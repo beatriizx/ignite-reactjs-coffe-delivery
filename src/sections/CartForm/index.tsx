@@ -2,6 +2,7 @@ import styles from './styles.module.scss';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
 import creditCardIcon from '../../assets/credit-card-icon.svg';
 import debitCardIcon from '../../assets/debit-card-icon.svg';
@@ -21,6 +22,7 @@ interface FormValues {
 }
 
 export const CartForm = () => {
+  const navigate = useNavigate();
   const schema = yup.object({
     cep: yup.string().required('Cep é obrigatório'),
     street: yup.string().required('Rua é obrigatório'),
@@ -40,7 +42,21 @@ export const CartForm = () => {
   });
 
   const onSubmit = (data: FormValues) => {
-    console.log(data);
+    const { street, city, neighborhood, number, uf, payment } = data;
+    const adress = {
+      street,
+      city,
+      neighborhood,
+      number,
+      uf,
+    };
+
+    navigate('/order-sucess', {
+      state: {
+        adress,
+        payment,
+      },
+    });
   };
 
   return (

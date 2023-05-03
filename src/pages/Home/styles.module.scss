@@ -10,7 +10,7 @@
     #f5eedc,
     #f0e7eb,
     #f4f1fb,
-    #fafafa 10%
+    #fafafa 8%
   );
 
   padding-bottom: 2rem;
@@ -22,7 +22,7 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 520px) {
   .homeContainer {
     background: linear-gradient(
       to bottom,
@@ -37,7 +37,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
   .homeContainer {
     background: linear-gradient(
       to bottom,

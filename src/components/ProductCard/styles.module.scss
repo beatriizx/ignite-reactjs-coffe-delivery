@@ -5,7 +5,6 @@
   .cardContent {
     padding-top: 5rem;
     background: var(--brand-gray-100);
-    width: 256px;
     border-radius: 6px 36px 6px 36px;
     display: flex;
     align-items: center;
@@ -24,17 +23,16 @@
         font-size: 0.625rem;
         padding: 0.5rem;
         border-radius: 100px;
-
       }
     }
 
     .productImage {
       position: absolute;
       top: -30px;
+      width: 100px;
     }
 
     .productInfo {
-      margin-top: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -60,6 +58,7 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      flex-direction: column;
 
       .price {
         font-size: 0.875rem;

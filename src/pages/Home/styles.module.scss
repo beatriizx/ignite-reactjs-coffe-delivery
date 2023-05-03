@@ -10,7 +10,7 @@
     #f5eedc,
     #f0e7eb,
     #f4f1fb,
-    #fafafa 20%
+    #fafafa 10%
   );
 
   padding-bottom: 2rem;
@@ -19,5 +19,35 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .homeContainer {
+    background: linear-gradient(
+      to bottom,
+      #fafafa,
+      #f4f1fb,
+      #f6f0e8,
+      #f5eedc,
+      #f0e7eb,
+      #f4f1fb,
+      #fafafa 15%
+    );
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .homeContainer {
+    background: linear-gradient(
+      to bottom,
+      #fafafa,
+      #f4f1fb,
+      #f6f0e8,
+      #f5eedc,
+      #f0e7eb,
+      #f4f1fb,
+      #fafafa 20%
+    );
   }
 }

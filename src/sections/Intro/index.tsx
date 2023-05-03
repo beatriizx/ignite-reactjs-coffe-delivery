@@ -8,7 +8,7 @@ import coffe from '../../assets/coffe.png';
 export const IntroSection = () => {
   return (
     <div className={styles.intro}>
-      <div>
+      <div className={styles.introContent}>
         <h1>Encontre o café perfeito para qualquer hora do dia</h1>
         <div className={styles.benefits}>
           <div>
@@ -30,7 +30,7 @@ export const IntroSection = () => {
         </div>
       </div>
 
-      <img src={coffe} alt="" />
+      <img src={coffe} alt="" className={styles.mainImage} />
     </div>
   );
 };

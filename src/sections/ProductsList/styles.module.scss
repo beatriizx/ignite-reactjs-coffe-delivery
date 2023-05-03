@@ -7,6 +7,69 @@
   .productList {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
+
+    li {
+      width: 90%;
+
+      p {
+        max-width: 25ch;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .productListContainer {
+    .productList {
+      flex-direction: row;
+
+      li {
+        max-width: 220px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .productListContainer {
+    .productList {
+      flex-direction: row;
+
+      li {
+        max-width: 280px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .productListContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .productList {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      li {
+        width: 265px;
+        max-width: unset;
+
+        p {
+          max-width: unset;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .productListContainer {
+    .productList {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 }

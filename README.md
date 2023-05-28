@@ -6,8 +6,10 @@ Essa aplicação é o segundo desafio do curso Ignite React da Rocketseat. O obj
 
 - React.js
 - Typescript
+- Vite
 - SCSS
 - HTML
+
 
 ## :zap: Como usar
 

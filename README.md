@@ -16,11 +16,15 @@ Essa aplicação é o segundo desafio do curso Ignite React da Rocketseat. O obj
 ```bash
   # Clone o repositório
   $ git clone git@github.com:beatriizx/ignite-reactjs-to-do-list
+  
+  # Instale o JSON Server
+  $ npm install -g json-server
 
   # Instale as dependências
   $ npm install
 
   # Inicie o projeto
+  $ npm run server
   $ npm run dev
  ```
 <p align="center">

@@ -15,7 +15,7 @@ Essa aplicação é o segundo desafio do curso Ignite React da Rocketseat. O obj
 
 ```bash
   # Clone o repositório
-  $ git clone git@github.com:beatriizx/ignite-reactjs-to-do-list
+  $ git clone https://github.com/beatriizx/ignite-reactjs-coffe-delivery.git
   
   # Instale o JSON Server
   $ npm install -g json-server

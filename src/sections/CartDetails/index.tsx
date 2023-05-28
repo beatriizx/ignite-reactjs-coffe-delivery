@@ -3,7 +3,12 @@ import styles from './styles.module.scss';
 import { CartContext, Product } from '../../contexts/CartContext';
 import { CartController } from '../../components/CartController';
 
-export const CartDetails = () => {
+interface CartDetailsProps {
+  handleViewCartDetails: () => void;
+  isMobile: boolean;
+}
+
+export const CartDetails = ({ handleViewCartDetails, isMobile }: CartDetailsProps) => {
   const { products, totalProductsPrice, totalPrice, shippingPrice } = useContext(CartContext);
 
   return (
@@ -16,7 +21,7 @@ export const CartDetails = () => {
               <div className={styles.productContent}>
                 <div className={styles.productInfo}>
                   <span>{product.name}</span>
-                  <span>{product.price}</span>
+                  <span>R$ {product.price}</span>
                 </div>
                 <CartController product={product} pageType="cart" />
               </div>
@@ -40,8 +45,12 @@ export const CartDetails = () => {
         </div>
       </div>
 
-      <button className={styles.confirmOrder} type="submit">
-        CONFIRMAR PEDIDO
+      <button
+        className={styles.confirmOrder}
+        type={isMobile ? 'button' : 'submit'}
+        onClick={isMobile ? handleViewCartDetails : () => {}}
+      >
+        {isMobile ? 'Ir para o Checkout' : ' CONFIRMAR PEDIDO'}
       </button>
     </div>
   );

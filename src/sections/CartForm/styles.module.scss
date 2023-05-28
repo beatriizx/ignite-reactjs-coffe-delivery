@@ -1,11 +1,22 @@
 .container {
+  width: 100%;
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .inputsContainer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .backToCartButton {
+    background-color: transparent;
+    color: var(--brand-purple-500);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
   }
 
   .errorMessage {
@@ -23,11 +34,6 @@
 
   .inputContainer {
     display: flex;
-    flex-direction: column;
-
-    &:nth-child(2) {
-      flex: 1;
-    }
   }
 
   .inputs {
@@ -36,7 +42,7 @@
     flex-direction: column;
     gap: 1rem;
     background-color: #f3f2f2;
-    padding: 2.5rem;
+    padding: 1.5rem;
 
     input {
       background-color: #ededed;
@@ -47,16 +53,25 @@
 
     div {
       display: flex;
+      flex-direction: column;
       gap: 0.75rem;
     }
   }
 
   .payment {
+    order: 1;
     display: flex;
     flex-direction: column;
     background-color: #f3f2f2;
-    padding: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
     border-radius: 6px;
+    margin-bottom: 1rem;
+
+    .cashIcon {
+      display: none;
+    }
 
     .paymentInfo {
       display: flex;
@@ -68,16 +83,19 @@
       font-size: 1rem;
       font-weight: 400;
       margin-bottom: 0.25rem;
+      text-align: center;
     }
 
     p {
       color: var(--base-gray-700);
       font-size: 0.875rem;
       margin-bottom: 2rem;
+      text-align: center;
     }
 
     .paymentOptions {
       display: flex;
+      flex-direction: column;
       gap: 0.75rem;
       margin-bottom: 1rem;
 
@@ -87,9 +105,12 @@
         background-color: #e6e5e5;
         align-items: center;
         justify-content: center;
-        gap: 0.75rem;
-        width: 180px;
+
+        width: 90%;
+        gap: 1rem;
+
         position: relative;
+        font-size: 0.875rem;
         padding: 1rem;
         z-index: 10;
         cursor: pointer;
@@ -122,6 +143,172 @@
           text-transform: uppercase;
           font-size: 0.75rem;
         }
+      }
+    }
+  }
+
+  .confirmOrder {
+    width: 40%;
+    min-width: 230px;
+    background-color: var(--brand-yellow-300);
+    color: white;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+  }
+
+  .orderProducts {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: unset;
+    gap: 2rem;
+
+    .backToCartButton {
+      display: none;
+    }
+
+    .orderProducts {
+      div {
+        min-width: 100px;
+        flex: unset;
+      }
+    }
+
+    .inputsContainer {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 1rem;
+    }
+
+    .errorMessage {
+      color: rgb(255, 86, 48);
+      line-height: 1.5;
+      font-size: 0.75rem;
+      font-weight: 400;
+      text-align: left;
+      margin: 0px 14px 0px;
+    }
+
+    .inputError {
+      border: 1px solid rgb(255, 86, 48);
+    }
+
+    .inputContainer {
+      display: flex;
+      flex-direction: column;
+
+      &:nth-child(2) {
+        flex: 1;
+      }
+    }
+
+    .inputs {
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: #f3f2f2;
+      padding: 2.5rem;
+
+      input {
+        background-color: #ededed;
+        height: 42px;
+        border-radius: 4px;
+        padding-left: 1rem;
+      }
+
+      div {
+        display: flex;
+        gap: 0.75rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .container {
+    .payment {
+      align-items: unset;
+      .paymentInfo {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .cashIcon {
+        display: unset;
+      }
+
+      h2 {
+        text-align: unset;
+      }
+
+      p {
+        text-align: unset;
+      }
+
+      .paymentOptions {
+        flex-direction: row;
+
+        .cashIcon {
+          display: unset;
+        }
+
+        label {
+          display: flex;
+          border-radius: 6px;
+          background-color: #e6e5e5;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
+          width: 180px;
+          position: relative;
+          padding: 1rem;
+          z-index: 10;
+          cursor: pointer;
+
+          input {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+
+            &:checked {
+              opacity: 1;
+              display: inline-block;
+              z-index: -1;
+              &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                display: block;
+                background-color: #ebe5f9;
+                border: 1px solid #8047f8;
+                border-radius: 6px;
+              }
+            }
+          }
+
+          span {
+            color: var(--base-gray-700);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+
+    .orderProducts {
+      div {
+        min-width: unset;
       }
     }
   }

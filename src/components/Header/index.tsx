@@ -22,7 +22,7 @@ export const Header = () => {
           <img src={locationIcon} alt="" />
           <span>São Paulo, SP</span>
         </div>
-        <Link to="/cart">
+        <Link to="/checkout">
           <button>
             <img src={cartIcon} alt="" />
             {totalProductsInCart > 0 && <span>{totalProductsInCart}</span>}

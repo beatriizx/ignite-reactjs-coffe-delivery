@@ -34,6 +34,10 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     setProducts(newArr);
   };
 
+  const cleanCart = () => {
+    setProducts([]);
+  };
+
   const updateLocalStorage = () => {
     const value = JSON.stringify(products);
     localStorage.setItem('coffe-delivery-cart', value);
@@ -78,6 +82,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
         addNewProductToCart,
         handleProductCartAmountChange,
         removeProductToCart,
+        cleanCart,
         totalProductsPrice,
         totalPrice,
         shippingPrice,

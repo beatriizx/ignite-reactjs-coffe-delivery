@@ -1,9 +1,10 @@
 .container {
-  padding: 1.5rem 2.5rem 3rem 2.5rem;
-  width: 370px;
+  padding: 1rem 1rem 2rem 1rem;
   height: fit-content;
   background-color: var(--brand-gray-100);
   border-radius: 6px 36px 6px 36px;
+  display: flex;
+  flex-direction: column;
 
   .cartInfo {
     display: flex;
@@ -50,10 +51,17 @@
       .productInfo {
         display: flex;
         align-items: center;
+
         justify-content: space-between;
 
         span {
+          font-size: 0.875rem;
           margin-bottom: 0.5rem;
+
+          &:last-child {
+            font-weight: 700;
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -67,5 +75,12 @@
     font-size: 0.875rem;
     padding: 0.75rem;
     border-radius: 6px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    padding: 1.5rem 2.5rem 3rem 2.5rem;
+    width: 316px;
   }
 }
